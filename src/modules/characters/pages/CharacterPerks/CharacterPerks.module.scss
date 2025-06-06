@@ -1,0 +1,21 @@
+@use '../../../app/styles/variables';
+
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url(../../../../assets/background.png) no-repeat center/cover;
+}
+
+
+.perksContainer {
+  transform: scale(0.5);
+  cursor: grab;
+  height: 1880px;
+  position: relative;
+  width: 3840px;
+}

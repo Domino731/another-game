@@ -1,0 +1,168 @@
+@use '../../../app/styles/variables';
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url(../../../../assets/background.png) no-repeat center/cover;
+}
+
+.tree {
+  background: url(../../../../assets/attributes-tree-decoration.png) no-repeat center;
+  height: 820px;
+  width: 762px;
+  min-height: 820px;
+  min-width: 762px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  transform-origin: center;
+}
+
+/* Reusable wrapper styles */
+.wrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 284px;
+  height: 188px;
+  cursor: pointer;
+
+  &.reflex {
+    top: 0;
+    height: 192px;
+  }
+
+  &.body {
+    top: 118px;
+    left: 0;
+  }
+
+  &.technical {
+    top: 118px;
+    right: 0;
+  }
+
+  &.intelligence {
+    bottom: 118px;
+    left: 0;
+    height: 187px;
+  }
+
+  &.cool {
+    bottom: 118px;
+    right: 0;
+    height: 187px;
+  }
+
+  &.relic {
+    bottom: 0;
+    height: 192px;
+  }
+}
+
+/* Reusable tile styles */
+.tile {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &.reflex {
+    background-image: url(../../../../assets/attribute-tile-1.svg);
+  }
+
+  &.body,
+  &.technical {
+    background-image: url(../../../../assets/attribute-tile-2.svg);
+  }
+
+  &.intelligence,
+  &.cool {
+    background-image: url(../../../../assets/attribute-tile-4.svg);
+  }
+
+  &.relic {
+    background-image: url(../../../../assets/attribute-tile-5.svg);
+  }
+}
+
+.buttons {
+  display: flex;
+  position: absolute;
+
+  gap: 10px;
+
+  &Bottom {
+    top: 200px;
+  }
+
+  &Top {
+    bottom: 200px;
+  }
+}
+
+.buttonContainer {
+  width: 32px;
+  height: 42px;
+  background: variables.$redPrimary;
+  padding: 1px;
+
+  &1 {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%, 0 85%);
+  }
+
+  &2 {
+    clip-path: polygon(0 0, 100% 0, 100% 84%, 85% 100%, 0 100%);
+  }
+
+  &3 {
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 15%);
+  }
+
+  &4 {
+    clip-path: polygon(85% 0, 100% 15%, 100% 100%, 0 100%, 0 0);
+  }
+
+  &Bottom {
+    top: 210px;
+  }
+}
+
+.buttonContent {
+  clip-path: inherit;
+  background: variables.$crimsonPrimary;
+  font-size: 28px;
+  color: variables.$lightBlue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+
+.level {
+  width: 200px;
+  height: 183px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  font-size: 20px;
+  color: variables.$lightBlue;
+}

@@ -1,0 +1,26 @@
+@use '../../../app/styles/variables';
+
+.title {
+  color: variables.$red;
+  letter-spacing: 0.1em !important;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &Right {
+    align-items: flex-end;
+  }
+
+  &Left {
+    align-items: flex-start;
+  }
+}
+
+
+.slotRow {
+  display: flex;
+  gap: 10px;
+}

@@ -1,0 +1,82 @@
+@use '../../../app/styles/variables';
+
+$polygon: polygon(0 0, 100% 0, calc(100% - 40px) 100%, 40px 100%);
+
+.container {
+  margin-top: -2px;
+  position: relative;
+  width: 500px;
+  height: 100px;
+}
+
+.selectWrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: variables.$red;
+  clip-path: $polygon;
+  padding: 2px;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  clip-path: inherit;
+  background: variables.$black;
+}
+
+
+.leftButton {
+  height: 100%;
+  width: 200px;
+  background: variables.$red;
+  position: absolute;
+  clip-path: $polygon;
+  top: 0;
+  left: -48px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  svg {
+    transform: translate(7px, 20px);
+    rotate: -20deg;
+  }
+}
+
+.rightButton {
+  height: 100%;
+  width: 200px;
+  background: variables.$red;
+  position: absolute;
+  clip-path: $polygon;
+  top: 0;
+  right: -48px;
+  display: flex;
+  justify-content: flex-end;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  svg {
+    transform: translate(-8px, 20px);
+    rotate: 20deg;
+  }
+}
+
+.navButton {
+  svg {
+    font-size: 64px !important;
+  }
+
+}
+
+.charactersList {
+  display: flex;
+  gap: 10px;
+  padding: 10px 40px;
+  height: 100%;
+}

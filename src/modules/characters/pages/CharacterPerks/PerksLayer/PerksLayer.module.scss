@@ -1,0 +1,132 @@
+.container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+
+  div[data-perk-type] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+  }
+
+  div[data-perk-tile-state] {
+    transition: 0.5s;
+  }
+
+  div[data-perk-type="milestone"] {
+    height: 236px;
+    width: 236px;
+
+    &::before {
+      background: url(../../../../../assets/attributes/tile-milestone-maxed-glow.png) no-repeat;
+      background-size: cover;
+      content: "";
+      height: 616px;
+      left: 50%;
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: opacity .3s;
+      width: 616px;
+    }
+
+    div[data-perk-tile] {
+      height: 180px;
+      width: 180px;
+    }
+  }
+
+  div[data-perk-type="perk"] {
+    height: 148px;
+    width: 140px;
+
+    div[data-perk-tile] {
+      height: 116px;
+      width: 126px;
+    }
+  }
+
+  div[data-perk-type="master"] {
+    height: 336px;
+    width: 380px;
+
+    div[data-perk-tile] {
+      height: 256px;
+      width: 252px;
+    }
+  }
+
+
+  div[data-perk-tile-state="locked"] {
+    background: url(../../../../../assets/attributes/perk-icons-not-connected.png);
+  }
+
+  div[data-perk-tile-state="not-connected"] {
+    background: url(../../../../../assets/attributes/perk-icons-not-connected.png);
+  }
+
+  div[data-perk-tile-state="available"] {
+    background: url(../../../../../assets/attributes/perk-icons-available.png);
+  }
+
+  div[data-perk-tile-state="maxed"] {
+    background: url(../../../../../assets/attributes/perk-icons-maxed.png);
+  }
+
+
+  div[data-perk-type="milestone"] {
+    &[data-perk-state="locked"] {
+      filter: brightness(.5);
+      background: url(../../../../../assets/attributes/tile-milestone-locked.png);
+    }
+
+    &[data-perk-state="available"] {
+      background: url(../../../../../assets/attributes/tile-milestone-available.png);
+    }
+
+    &[data-perk-state="maxed"] {
+      background: url(../../../../../assets/attributes/tile-milestone-maxed.png);
+
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  div[data-perk-type="perk"] {
+    &[data-perk-state="locked"] {
+      filter: brightness(.5);
+      background: url(../../../../../assets/attributes/tile-perk-locked.png);
+    }
+
+    &[data-perk-state="available"] {
+      background: url(../../../../../assets/attributes/tile-perk-available.png);
+    }
+
+    &[data-perk-state="not-connected"] {
+      background: url(../../../../../assets/attributes/tile-perk-not-connected.png);
+    }
+
+    &[data-perk-state="maxed"] {
+      background: url(../../../../../assets/attributes/tile-perk-maxed.png);
+    }
+  }
+
+  div[data-perk-type="master"] {
+    &[data-perk-state="locked"] {
+      filter: brightness(.5);
+      background: url(../../../../../assets/attributes/tile-master-locked.png);
+    }
+  }
+}
+
+
+.tile {
+  position: absolute;
+}

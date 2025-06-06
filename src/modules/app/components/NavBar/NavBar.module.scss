@@ -1,0 +1,24 @@
+@use '../../styles/variables';
+
+.container {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+}
+
+.navContainer {
+  height: 46px;
+}
+
+.returnButton {
+  width: 48px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: variables.$yellow;
+  color: variables.$black;
+  clip-path: polygon(100% 0, 100% 100%, 20% 100%, 0 75%, 0 0);
+}

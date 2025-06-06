@@ -1,0 +1,27 @@
+@use '../../../app/styles/variables';
+
+.container {
+  height: 100%;
+  width: 64px;
+  background: variables.$red;
+  padding: 1px;
+
+  &Left {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%, 0 50%);
+  }
+
+  &Center {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  &Right {
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 70% 100%, 0 100%);
+  }
+}
+
+.content {
+  clip-path: inherit;
+  width: 100%;
+  height: 100%;
+  background: variables.$black;
+}
