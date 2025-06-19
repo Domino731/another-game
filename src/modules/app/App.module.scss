@@ -1,5 +1,14 @@
 @use './styles/variables';
 
+@font-face {
+  font-family: 'BlenderProBold';
+  src: url(../../assets/fonts/blender-pro-bold.woff2) format('woff2'),
+  url(../../assets/fonts/blender-pro-bold.woff) format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 .container {
   width: 100vw;
   height: 100vh;
@@ -68,4 +77,8 @@ table {
 
 * {
   box-sizing: border-box;
+}
+
+body {
+  font-family: 'BlenderProBold', sans-serif !important;
 }

@@ -6,11 +6,29 @@
   left: 0;
 
 
+  div[data-lock="true"] {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 60px 80px;
+    filter: brightness(.6);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
   div[data-perk-type] {
     display: flex;
     justify-content: center;
     align-items: center;
     transition: 0.5s;
+
+    &:hover {
+      div[data-lock="true"] {
+        background-image: url(../../../../../assets/icons/padlock-blue.png);
+      }
+    }
   }
 
   div[data-perk-tile-state] {
@@ -60,10 +78,26 @@
       height: 256px;
       width: 252px;
     }
+
+    &::before {
+      background: url(../../../../../assets/attributes/tile-master-maxed-glow.png) no-repeat;
+      background-size: cover;
+      content: "";
+      height: 564px;
+      left: 50%;
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: opacity .3s;
+      width: 564px;
+    }
   }
 
 
   div[data-perk-tile-state="locked"] {
+    filter: brightness(.5);
     background: url(../../../../../assets/attributes/perk-icons-not-connected.png);
   }
 
@@ -79,10 +113,17 @@
     background: url(../../../../../assets/attributes/perk-icons-maxed.png);
   }
 
+  div[data-perk-tile-state="invested"] {
+    background: url(../../../../../assets/attributes/perk-icons-maxed.png);
+  }
+
 
   div[data-perk-type="milestone"] {
+    &[data-perk-state="invested"] {
+      background: url(../../../../../assets/attributes/tile-milestone-invested.png);
+    }
+
     &[data-perk-state="locked"] {
-      filter: brightness(.5);
       background: url(../../../../../assets/attributes/tile-milestone-locked.png);
     }
 
@@ -101,7 +142,6 @@
 
   div[data-perk-type="perk"] {
     &[data-perk-state="locked"] {
-      filter: brightness(.5);
       background: url(../../../../../assets/attributes/tile-perk-locked.png);
     }
 
@@ -120,8 +160,23 @@
 
   div[data-perk-type="master"] {
     &[data-perk-state="locked"] {
-      filter: brightness(.5);
       background: url(../../../../../assets/attributes/tile-master-locked.png);
+    }
+
+    &[data-perk-state="available"] {
+      background: url(../../../../../assets/attributes/tile-master-available.png);
+    }
+
+    &[data-perk-state="not-connected"] {
+      background: url(../../../../../assets/attributes/tile-master-locked.png);
+    }
+
+    &[data-perk-state="maxed"] {
+      background: url(../../../../../assets/attributes/tile-master-maxed.png);
+
+      &::before {
+        opacity: 1;
+      }
     }
   }
 }
@@ -129,4 +184,44 @@
 
 .tile {
   position: absolute;
+}
+
+.points {
+  border: 2px solid #07080d;
+  border-radius: 6px;
+  bottom: 6px;
+  color: #07080d;
+  font-family: BlenderProBold, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  left: 50%;
+  line-height: 100%;
+  padding: 2px 8px;
+  position: absolute;
+  text-align: center;
+  transform: translateX(-50%);
+
+  &[data-state="locked"] {
+    background: #07080d;
+    border: 2px solid #682421;
+    color: #98322b;
+  }
+
+  &[date-state="not-connected"] {
+    background: #07080d;
+    border: 2px solid #682421;
+    color: #98322b;
+  }
+
+  &[data-state="available"] {
+    background: #9cd5f0;
+  }
+
+  &[data-state="invested"] {
+    background: #ffd83f;
+  }
+
+  &[data-state="maxed"] {
+    background: #ffd83f;
+  }
 }

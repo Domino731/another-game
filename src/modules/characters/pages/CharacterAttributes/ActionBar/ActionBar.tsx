@@ -1,11 +1,16 @@
 import styles from './ActionBar.module.scss';
 import {Icon, IconName} from "../../../../../components/Icon/Icon.tsx";
+import {useSelector} from "react-redux";
+import {characterSelectors} from "../../../store/selectors";
 
 export const ActionBar = () => {
+    const perkPoints = useSelector(characterSelectors.perkPoints);
+    const attributePoints = useSelector(characterSelectors.attributePoints);
+
     return <div className={styles.container}>
         <div>
             <div className={`${styles.boxTitle} ${styles.boxTitleAttribute}`}>
-                <p>66</p>
+                <p>{attributePoints}</p>
                 <Icon name={IconName.ATTRIBUTE_POINT} size={48}/>
                 <p>ATTRIBUTE POINTS</p>
             </div>
@@ -20,7 +25,7 @@ export const ActionBar = () => {
         </div>
         <div className={styles.boxPerk}>
             <div className={`${styles.boxTitle} ${styles.boxTitlePerk}`}>
-                <p>66</p>
+                <p>{perkPoints}</p>
                 <Icon name={IconName.PERK_POINT} size={48}/>
                 <p>PERK POINTS</p>
             </div>

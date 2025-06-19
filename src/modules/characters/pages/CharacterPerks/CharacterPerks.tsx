@@ -2,15 +2,16 @@ import styles from './CharacterPerks.module.scss'
 import {
     TransformWrapper,
     TransformComponent,
-    useControls,
 } from "react-zoom-pan-pinch";
 import {ConnectionsLayer} from "./ConnectionsLayer/ConnectionsLayer.tsx";
 import {PerksLayer} from "./PerksLayer/PerksLayer.tsx";
+import {AttributesNav} from "../AttributesNav/AttributesNav";
+import {ActionBar} from "../CharacterAttributes/ActionBar/ActionBar";
 
 export const CharacterPerks = () => {
     return <div className={styles.container}>
+        <AttributesNav/>
         <TransformWrapper
-            defaultScale={1}
             defaultPositionX={200}
             defaultPositionY={400}
         >
@@ -21,5 +22,6 @@ export const CharacterPerks = () => {
                 </div>
             </TransformComponent>
         </TransformWrapper>
+        <ActionBar/>
     </div>
 }

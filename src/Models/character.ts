@@ -9,7 +9,7 @@ export enum AttributeName {
     RELIC = 'RELIC'
 }
 
-export interface AttributesModel {
+export interface CharacterAttributesModel {
     BODY: { value: number }
     REFLEX: { value: number }
     INTELLIGENCE: { value: number }
@@ -24,7 +24,8 @@ export interface CharacterPerkModel {
 }
 
 export interface CharacterModel {
-    attributes: AttributesModel;
+    attributes: CharacterAttributesModel;
     perks: CharacterPerkModel[];
     perkPoints: number;
+    attributePoints: number;
 }

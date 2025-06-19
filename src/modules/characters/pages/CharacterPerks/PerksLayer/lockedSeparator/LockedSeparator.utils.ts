@@ -1,6 +1,13 @@
-import {AttributeName, type AttributesModel} from "../../../../../../Models/character.ts";
+import {AttributeName, type CharacterAttributesModel} from "../../../../../../Models/character.ts";
 
-export const getSeparatorTier = (attributeName: AttributeName, characterAttributes: AttributesModel) => {
+export const BODY_TIERS = {
+    FIRST: 4,
+    SECOND: 9,
+    THIRD: 15,
+    FOURTH: 20,
+}
+
+export const getSeparatorTier = (attributeName: AttributeName, characterAttributes: CharacterAttributesModel) => {
     if (attributeName === AttributeName.BODY) {
         if (characterAttributes.BODY.value > 19) {
             return 4
