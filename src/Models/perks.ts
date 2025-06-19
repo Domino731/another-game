@@ -35,3 +35,7 @@ export enum Perks {
     PAIN_TO_GAIN = 'PAIN_TO_GAIN',
     FINISHER_SAVAGE_SLINGER = 'FINISHER_SAVAGE_SLINGER',
 }
+
+export interface PerkConnectionModel {
+    id: number
+}

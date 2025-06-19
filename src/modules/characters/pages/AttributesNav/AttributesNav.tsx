@@ -6,10 +6,10 @@ import {useDispatch, useSelector} from 'react-redux';
 import {characterSelectors} from "../../store/selectors";
 import {useCallback} from "react";
 import {characterSliceActions} from "../../store/slice";
+import {Link} from "react-router-dom";
 
 export const AttributesNav = () => {
     const dispatch = useDispatch();
-
 
     const active: AttributeName = AttributeName.BODY;
     const attributes = useSelector(characterSelectors.attributes);
@@ -34,7 +34,7 @@ export const AttributesNav = () => {
         <div className={styles.attributes}>
             {GAME_ATTRIBUTES.map(attribute => <div id={attribute.id}
                                                    className={`${styles.attributeItem} ${active === attribute.id && styles.attributeItemActive}`}>
-                <div className={styles.content}>
+                <Link to={attribute.perksRoute} className={styles.content}>
                     <div className={styles.stats}>
                         <Icon name={attribute.iconName} size={32}/>
                         <div className={styles.points}>{getPoints(attribute.id)}</div>
@@ -42,7 +42,7 @@ export const AttributesNav = () => {
                     <div className={styles.name}>
                         {attribute.label}
                     </div>
-                </div>
+                </Link>
                 <div className={styles.buttons}>
                     <button className={`${styles.button} ${styles.buttonSub}`} disabled={getPoints(attribute.id) === 0}
                             onClick={() => handleRemovePoint(attribute.id)}>

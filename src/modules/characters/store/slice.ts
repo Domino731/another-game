@@ -1,7 +1,6 @@
 import {createSlice, type PayloadAction} from '@reduxjs/toolkit'
 import type {CharacterModel, CharacterPerkModel} from "../../../Models/character.ts";
 import type {SetAttributePayload} from "./slice.types.ts";
-import {Perks} from "../../../Models/perks.ts";
 import {AttributeName} from "../../../Models/attributes";
 
 type CharacterState = CharacterModel;
@@ -16,7 +15,7 @@ const initialState: CharacterState = {
         RELIC: {value: 0},
     },
     perkPoints: 3,
-    attributePoints: 4,
+    attributePoints: 12,
     perks: []
 }
 

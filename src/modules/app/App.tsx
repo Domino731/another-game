@@ -1,11 +1,27 @@
 import styles from './App.module.scss'
-import {CharacterDetailsPage, CharacterAttributes} from "../characters/pages";
 import {CssBaseline, ThemeProvider} from "@mui/material";
 import {theme} from "./styles/theme.ts";
 import {NavBar} from "./components/NavBar/NavBar.tsx";
-import {CharacterPerks} from "../characters/pages/CharacterPerks/CharacterPerks.tsx";
+import {
+    CharacterBodyPerks,
+    CharacterCoolPerks,
+    CharacterIntelligencePerks, CharacterReflexesPerks, CharacterRelicPerks, CharacterTechnicalAbilityPerks
+} from "../characters/pages/CharacterPerks/CharacterPerks.tsx";
 import {Provider} from 'react-redux'
 import {store} from "./store/store.ts";
+import {Routes, Route} from 'react-router-dom';
+import {ROUTES} from "./routes";
+
+const RoutesComponent = () => {
+    return <Routes>
+        <Route path={ROUTES.characterPerksBody} element={<CharacterBodyPerks/>}/>
+        <Route path={ROUTES.characterPerksCool} element={<CharacterCoolPerks/>}/>
+        <Route path={ROUTES.characterPerksIntelligence} element={<CharacterIntelligencePerks/>}/>
+        <Route path={ROUTES.characterPerksReflexes} element={<CharacterReflexesPerks/>}/>
+        <Route path={ROUTES.characterPerksRelic} element={<CharacterRelicPerks/>}/>
+        <Route path={ROUTES.characterPerksTechnicalAbility} element={<CharacterTechnicalAbilityPerks/>}/>
+    </Routes>
+}
 
 function App() {
     return (
@@ -14,9 +30,9 @@ function App() {
                 <CssBaseline/>
                 <div className={styles.container}>
                     <NavBar/>
+                    <RoutesComponent/>
                     {/*<CharacterDetailsPage/>*/}
                     {/*<CharacterAttributes/>*/}
-                    <CharacterPerks/>
                 </div>
             </ThemeProvider>
         </Provider>
