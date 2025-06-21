@@ -22,7 +22,7 @@ interface CharacterPerksProps {
 
 const CharacterPerks = ({data}: CharacterPerksProps) => {
     return <div className={styles.container}>
-        <AttributesNav/>
+        <AttributesNav attributeId={data.id}/>
         <TransformWrapper
             defaultPositionX={200}
             defaultPositionY={400}

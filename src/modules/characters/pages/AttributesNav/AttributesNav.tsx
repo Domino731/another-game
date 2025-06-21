@@ -8,10 +8,14 @@ import {useCallback} from "react";
 import {characterSliceActions} from "../../store/slice";
 import {Link} from "react-router-dom";
 
-export const AttributesNav = () => {
+interface AttributesNavProps {
+    attributeId: AttributeName;
+}
+
+export const AttributesNav = ({attributeId}: AttributesNavProps) => {
     const dispatch = useDispatch();
 
-    const active: AttributeName = AttributeName.BODY;
+    const active: AttributeName = attributeId;
     const attributes = useSelector(characterSelectors.attributes);
     const attributePoints = useSelector(characterSelectors.attributePoints);
 

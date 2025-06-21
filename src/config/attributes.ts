@@ -8,6 +8,8 @@ import {technicalAbilityConnections, technicalAbilityPerksData} from "./perks/te
 import {coolConnectionsData, coolPerksData} from "./perks/cool-perks";
 import {relicConnectionsData, relicPerksData} from "./perks/relic-perks";
 import bodyConnectionsStyles from './perks/body-perk-connection.module.scss';
+import coolConnectionsStyles from './perks/cool-perks-connections.module.scss';
+import intelligenceConnectionsStyles from './perks/intelligence-perks-connections.module.scss';
 
 const maxValue = 20;
 
@@ -40,7 +42,8 @@ export const INTELLIGENCE_ATTRIBUTE: AttributeModel = {
     iconName: IconName.ATTRIBUTE_INTELLIGENCE,
     perksRoute: ROUTES.characterPerksIntelligence,
     perksData: intelligencePerksData,
-    perksConnections: intelligencePerkConnections
+    perksConnections: intelligencePerkConnections,
+    connectionsClassName: intelligenceConnectionsStyles.container
 }
 export const TECHNICAL_ABILITY_ATTRIBUTE: AttributeModel = {
     id: AttributeName.TECHNICAL_ABILITY,
@@ -58,7 +61,8 @@ export const COOL_ATTRIBUTE: AttributeModel = {
     iconName: IconName.ATTRIBUTE_COOL,
     perksRoute: ROUTES.characterPerksCool,
     perksData: coolPerksData,
-    perksConnections: coolConnectionsData
+    perksConnections: coolConnectionsData,
+    connectionsClassName: coolConnectionsStyles.container
 
 }
 export const RELIC_ATTRIBUTE: AttributeModel = {
