@@ -10,6 +10,8 @@ import {relicConnectionsData, relicPerksData} from "./perks/relic-perks";
 import bodyConnectionsStyles from './perks/body-perk-connection.module.scss';
 import coolConnectionsStyles from './perks/cool-perks-connections.module.scss';
 import intelligenceConnectionsStyles from './perks/intelligence-perks-connections.module.scss';
+import reflexConnectionStyles from './perks/reflex-perks-connections.module.scss';
+import technicalAbilityConnectionsStyles from './perks/technical-ability-perks-connections.module.scss';
 
 const maxValue = 20;
 
@@ -32,7 +34,8 @@ export const REFLEX_ATTRIBUTE: AttributeModel = {
     iconName: IconName.ATTRIBUTE_REFLEXES,
     perksRoute: ROUTES.characterPerksReflexes,
     perksData: reflexesPerksData,
-    perksConnections: reflexConnectionData
+    perksConnections: reflexConnectionData,
+    connectionsClassName: reflexConnectionStyles.container
 }
 
 export const INTELLIGENCE_ATTRIBUTE: AttributeModel = {
@@ -53,6 +56,7 @@ export const TECHNICAL_ABILITY_ATTRIBUTE: AttributeModel = {
     perksRoute: ROUTES.characterPerksTechnicalAbility,
     perksData: technicalAbilityPerksData,
     perksConnections: technicalAbilityConnections,
+    connectionsClassName: technicalAbilityConnectionsStyles.container
 }
 export const COOL_ATTRIBUTE: AttributeModel = {
     id: AttributeName.COOL,
