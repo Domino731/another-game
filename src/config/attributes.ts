@@ -69,20 +69,11 @@ export const COOL_ATTRIBUTE: AttributeModel = {
     connectionsClassName: coolConnectionsStyles.container
 
 }
-export const RELIC_ATTRIBUTE: AttributeModel = {
-    id: AttributeName.RELIC,
-    label: 'Relic',
-    maxValue,
-    iconName: IconName.ATTRIBUTE_RELIC,
-    perksRoute: ROUTES.characterPerksRelic,
-    perksData: relicPerksData,
-    perksConnections: relicConnectionsData
-}
+
 export const GAME_ATTRIBUTES: Array<AttributeModel> = [
     BODY_ATTRIBUTE,
     REFLEX_ATTRIBUTE,
     INTELLIGENCE_ATTRIBUTE,
     TECHNICAL_ABILITY_ATTRIBUTE,
     COOL_ATTRIBUTE,
-    RELIC_ATTRIBUTE
 ]

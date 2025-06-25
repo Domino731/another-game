@@ -5,7 +5,7 @@ import {NavBar} from "./components/NavBar/NavBar.tsx";
 import {
     CharacterBodyPerks,
     CharacterCoolPerks,
-    CharacterIntelligencePerks, CharacterReflexesPerks, CharacterRelicPerks, CharacterTechnicalAbilityPerks
+    CharacterIntelligencePerks, CharacterReflexesPerks, CharacterTechnicalAbilityPerks
 } from "../characters/pages/CharacterPerks/CharacterPerks.tsx";
 import {Provider} from 'react-redux'
 import {store} from "./store/store.ts";
@@ -18,7 +18,6 @@ const RoutesComponent = () => {
         <Route path={ROUTES.characterPerksCool} element={<CharacterCoolPerks/>}/>
         <Route path={ROUTES.characterPerksIntelligence} element={<CharacterIntelligencePerks/>}/>
         <Route path={ROUTES.characterPerksReflexes} element={<CharacterReflexesPerks/>}/>
-        <Route path={ROUTES.characterPerksRelic} element={<CharacterRelicPerks/>}/>
         <Route path={ROUTES.characterPerksTechnicalAbility} element={<CharacterTechnicalAbilityPerks/>}/>
     </Routes>
 }
