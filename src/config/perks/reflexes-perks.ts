@@ -13,7 +13,9 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.FIRST,
         requiredPerks: [],
         levels: 1,
-        connections: []
+        connections: [],
+        name: "STUNTJOCK",
+        description: "Unlocks preem new ways to exit vehicles:\\\\n\\\\nJump out - double-tap [F]\\\\n\\\\nSlide out - hold [F] while at high speed\\\\n\\\\nYou can also draw and fire weapons during these stunts.\\\\n\\\\nWhile driving:\\\\nNo bullet spread penalty from movement\\\\n-50% bullet spread overall"
     },
     {
         id: Perks.MULTITASKER,
@@ -22,7 +24,9 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.FIRST,
         requiredPerks: [Perks.SLIPPERY],
         levels: 1,
-        connections: [1]
+        connections: [1],
+        name: "MULTITASKER",
+        description: "Allows you to shoot while sprinting, sliding and vaulting. "
     },
     {
         id: Perks.PARKOUR,
@@ -31,7 +35,9 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.FIRST,
         requiredPerks: [Perks.SLIPPERY],
         levels: 1,
-        connections: [2]
+        connections: [2],
+        name: "PARKOUR",
+        description: "Increased vaulting and climbing speed."
     },
     {
         id: Perks.MUSCLEMEMORY,
@@ -40,7 +46,9 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.FIRST,
         requiredPerks: [Perks.SLIPPERY],
         levels: 1,
-        connections: [3]
+        connections: [3],
+        name: "MUSCLE MEMORY",
+        description: "Allows you to reload weapons while sprinting, sliding and vaulting."
     },
     {
         id: Perks.POWER_SLIDE,
@@ -49,7 +57,9 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.FIRST,
         requiredPerks: [Perks.SLIPPERY],
         levels: 1,
-        connections: [4]
+        connections: [4],
+        name: "POWER SLIDE",
+        description: "Increased slide distance."
     },
     {
         id: Perks.SLIPPERY,
@@ -58,7 +68,9 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.FIRST,
         requiredPerks: [],
         levels: 1,
-        connections: []
+        connections: [],
+        name: "SLIPPERY",
+        description: "The faster you move, the more difficult for enemies to shoot you.\\\\n\\\\nEffect increases when Dashing, dodging, sliding, sprinting and vaulting."
     },
 
     {
@@ -68,7 +80,9 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.SECOND,
         requiredPerks: [Perks.READY_RESTED_RELOADED],
         levels: 1,
-        connections: [5]
+        connections: [5],
+        name: "SPICE OF LIFE",
+        description: "+15% weapon swap speed, –30% bullet spread briefly after swapping weapons. "
     },
     {
         id: Perks.TUNNEL_VISION,
@@ -77,7 +91,10 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.SECOND,
         requiredPerks: [Perks.READY_RESTED_RELOADED],
         levels: 1,
-        connections: [15]
+        connections: [15],
+        name: "TUNNEL VISION",
+        limitationDescription: "Only affects Assault Rifles and SMGs",
+        description: "+20% effective range and accuracy."
     },
     {
         id: Perks.MIND_OVER_MATTER,
@@ -86,7 +103,9 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.SECOND,
         requiredPerks: [Perks.READY_RESTED_RELOADED],
         levels: 1,
-        connections: [16]
+        connections: [16],
+        name: "MIND OVER MATTER",
+        description: "–25% recoil when aiming. "
     },
     {
         id: Perks.READY_RESTED_RELOADED,
@@ -95,7 +114,10 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.SECOND,
         requiredPerks: [],
         levels: 1,
-        connections: []
+        connections: [],
+        name: "READY RESTED RELOADED",
+        description: "Level 1: –10% stamina cost for shooting with AR and SMGs. \\nLevel 2: +30% reload speed when above 50% stamina.",
+        limitationDescription: "Only affects Assault Rifles and SMGs",
     },
 
     {
@@ -105,7 +127,9 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.SECOND,
         requiredPerks: [Perks.DASH],
         levels: 1,
-        connections: [8]
+        connections: [8],
+        name: "CAN'T TOUCH THIS",
+        description: "+100% mitigation chance when performing a Dash. \\n\\nMitigation grants a chance to reduce incoming damage by current Mitigation Strength (default 50%)"
     },
     {
         id: Perks.MAD_DASH,
@@ -114,7 +138,9 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.SECOND,
         requiredPerks: [Perks.DASH],
         levels: 1,
-        connections: [9]
+        connections: [9],
+        name: "MAD DASH",
+        description: "+100% dash range toward enemies. "
     },
     {
         id: Perks.STEADY_GRIP,
@@ -123,7 +149,9 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.SECOND,
         requiredPerks: [Perks.DASH],
         levels: 1,
-        connections: [17]
+        connections: [17],
+        name: "STEADY GRIP",
+        description: "Allows you to shoot while Dashing."
     },
     {
         id: Perks.MEAN_STREAK,
@@ -132,7 +160,9 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.SECOND,
         requiredPerks: [Perks.DASH],
         levels: 1,
-        connections: [18]
+        connections: [18],
+        name: "MEAN STREAK",
+        description: "+40% stamina after neutralizing an enemy while dashing. "
     },
     {
         id: Perks.DASH,
@@ -141,7 +171,9 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.SECOND,
         requiredPerks: [Perks.SLIPPERY],
         levels: 2,
-        connections: [5]
+        connections: [5],
+        name: "DASH",
+        description: "Level 1: –20% stamina cost for dodging and dashing. \\nLevel 2: Unlocks the ability to Dash.\\\\n\\\\nPress [LCTRL] to perform a Dash.\\\\n\\\\nDashing replaces dodging, allowing you to cover more ground and automatically vault over low obstacles."
     },
     {
         id: Perks.FLASH_AND_THUNDERCLAP,
@@ -150,7 +182,10 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.SECOND,
         requiredPerks: [Perks.MAD_DASH, Perks.SEEING_DOUBLE],
         levels: 1,
-        connections: [11, 12]
+        connections: [11, 12],
+        name: "FLASH AND THUNDERCLAP",
+        limitationDescription: "Only affects blades",
+        description: "When performing Strong Attacks, you now automatically leap to enemies within range. These Leap Attacks can be also performed from midair and deal additional damage that scales with the distance of the leap (max +50%)."
     },
     {
         id: Perks.SEEING_DOUBLE,
@@ -159,7 +194,10 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.SECOND,
         requiredPerks: [Perks.LEAD_AND_STEEL],
         levels: 1,
-        connections: [13]
+        connections: [13],
+        name: "SEEING DOUBLE",
+        description: "Increased damage and Stun chance with Counterattacks.",
+        limitationDescription: "Only affects blades",
     },
     {
         id: Perks.BULLET_DEFLECT,
@@ -168,7 +206,10 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.SECOND,
         requiredPerks: [Perks.LEAD_AND_STEEL],
         levels: 1,
-        connections: [14]
+        connections: [14],
+        name: "BULLET DEFLECT",
+        limitationDescription: "Only affects blades",
+        description: "When your stamina is above 33% blocking projectiles will Deflect them to wherever your reticle is aimed. Well-timed blocking just before being hit increases the damage you deal with deflected bullets. "
     },
 
     {
@@ -179,7 +220,10 @@ export const reflexesPerksData: Perk[] = [
         requiredPerks: [Perks.BULLET_DEFLECT],
         levels: 1,
         // TODO missing connection
-        connections: []
+        connections: [],
+        name: "BULLET TIME",
+        limitationDescription: "Only affects blades",
+        description: "Whenever time is slowed, Bullet Deflect does not consume Stamina and deflections automatically hit enemies for Crit Damage."
     },
 
     {
@@ -189,7 +233,10 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.SECOND,
         requiredPerks: [Perks.SLIPPERY],
         levels: 2,
-        connections: [6]
+        connections: [6],
+        name: "LEAD AND STEEL",
+        limitationDescription: "Only affects blades",
+        description: "Level 1: –15% stamina cost for attacks with blades. \\nLevel 2: Unlocks ability to block incoming projectiles with blades. This consumes stamina. "
     },
 
     {
@@ -199,7 +246,10 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.THIRD,
         requiredPerks: [Perks.SHARPSHOOTER],
         levels: 1,
-        connections: [22]
+        connections: [22],
+        name: "SPRAY AND PRAY",
+        limitationDescription: "Only affects Assault Rifles and SMGs",
+        description: "–10% Stamina cost for hip-firing. "
     },
     {
         id: Perks.GUN_DANCER,
@@ -208,7 +258,10 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.THIRD,
         requiredPerks: [Perks.SHARPSHOOTER],
         levels: 1,
-        connections: [23]
+        connections: [23],
+        name: "GUN DANCER",
+        limitationDescription: "Only affects Assault Rifles and SMGs",
+        description: "Aiming no longer slows movement.\\\\n\\\\nAllows you to shoot while vaulting."
     },
     {
         id: Perks.SHOOT_TO_CHILL,
@@ -217,7 +270,10 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.THIRD,
         requiredPerks: [Perks.SHARPSHOOTER],
         levels: 1,
-        connections: [28]
+        connections: [28],
+        name: "SHOOT TO CHILL",
+        limitationDescription: "Only affects Assault Rifles and SMGs",
+        description: "+4% Armor penetration for automatic weapons per stack of Sharpshooter."
     },
     {
         id: Perks.PRACTICE_MAKES_PERFECT,
@@ -226,7 +282,10 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.THIRD,
         requiredPerks: [Perks.SHARPSHOOTER],
         levels: 1,
-        connections: [29]
+        connections: [29],
+        name: "PRACTICE MAKES PERFECT",
+        limitationDescription: "Only affects Assault Rifles and SMGs",
+        description: "+7% Crit Chance and Crit Damage per stack of Sharpshooter."
     },
     {
         id: Perks.SHARPSHOOTER,
@@ -235,7 +294,10 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.THIRD,
         requiredPerks: [Perks.READY_RESTED_RELOADED],
         levels: 3,
-        connections: [19]
+        connections: [19],
+        name: "SHARPSHOOTER",
+        limitationDescription: "Only affects Assault Rifles and SMGs",
+        description: "Level 1: +15% aim speed. \\nLevel 2: improved weapon control. \\nLevel 3: each successful shot grants a stack of Sharpshooter. 7% bonus to Stamina Regen Rate and Stamina cost for 2 sec. per stack. Stacks  7 times. New stacks reset duration. All stacks are removed when duration ends."
     },
 
     {
@@ -245,7 +307,10 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.THIRD,
         requiredPerks: [Perks.GUN_DANCER, Perks.AERIAL_ACROBAT],
         levels: 1,
-        connections: [24, 25]
+        connections: [24, 25],
+        name: "AIR KERENZIKOV",
+        limitationDescription: "Only affects Assault Rifles and SMGs",
+        description: "Activating Kerenzikov in midair keeps you suspended in the air and extends its duration."
     },
     {
         id: Perks.AERIAL_ACROBAT,
@@ -254,7 +319,9 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.THIRD,
         requiredPerks: [Perks.AIR_DASH],
         levels: 1,
-        connections: [26]
+        connections: [26],
+        name: "AERIAL ACROBAT",
+        description: "Improves midair maneuverability."
     },
     {
         id: Perks.AERODYNAMIC,
@@ -263,7 +330,9 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.THIRD,
         requiredPerks: [Perks.AIR_DASH],
         levels: 1,
-        connections: [30]
+        connections: [30],
+        name: "AERODYNAMIC",
+        description: "+30% Mitigation strength in midair. "
     },
     {
         id: Perks.AIR_DASH,
@@ -272,7 +341,9 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.THIRD,
         requiredPerks: [Perks.DASH],
         levels: 3,
-        connections: [20]
+        connections: [20],
+        name: "AIR DASH",
+        description: "Level 1: –20% dash stamina cost.\\nLevel 2: +20% dash speed. \\nLevel 3: Unlocks the ability to dash in midair. "
     },
 
     {
@@ -282,7 +353,10 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.THIRD,
         requiredPerks: [Perks.LEAD_AND_STEEL],
         levels: 3,
-        connections: [21]
+        connections: [21],
+        name: "FINISHER: BLADERRUNNER",
+        limitationDescription: "Only affects blades",
+        description: "Level 1: -15% Stamina cost for attacks with Blades\\nLevel 2: +20% attack speed with Blades\\nLevel 3: Unlocks a Blade Finisher.\\\\n\\\\nPress [F] when an enemy's Health is low.\\\\n\\\\nRestores 25% Health.",
     },
     {
         id: Perks.FLASH_OF_STEEL,
@@ -291,7 +365,10 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.THIRD,
         requiredPerks: [Perks.FINISHED_BLADERRUNNER],
         levels: 1,
-        connections: [27]
+        connections: [27],
+        name: "FLASH OF STEEL",
+        limitationDescription: "Only affects blades",
+        description: "+25% movement speed and attack speed for 6 sec. after performing a Finisher"
     },
 
     {
@@ -301,7 +378,10 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.THIRD,
         requiredPerks: [Perks.FINISHED_BLADERRUNNER],
         levels: 1,
-        connections: [32]
+        connections: [32],
+        name: "OPPORTUNIST",
+        limitationDescription: "Only affects blades",
+        description: "Enemies affected by Stagger, Stun, Blinding and Bleeding are more susceptible to Finishers."
     },
     {
         id: Perks.GOING_THE_DISTANCE,
@@ -310,7 +390,10 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.THIRD,
         requiredPerks: [Perks.FINISHED_BLADERRUNNER],
         levels: 1,
-        connections: [31]
+        connections: [31],
+        name: "GOING THE DISTANCE",
+        limitationDescription: "Only affects blades",
+        description: '+100% Finisher range'
     },
 
     {
@@ -320,7 +403,10 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.FOURTH,
         requiredPerks: [Perks.SHARPSHOOTER],
         levels: 1,
-        connections: [33]
+        connections: [33],
+        name: "SALT IN THE WOUND",
+        limitationDescription: "Only affects Assault rifles",
+        description: "Shooting the same target 7 consecutive times deals bonus damage equal to 100% of the total damage from those shots. "
     },
     {
         id: Perks.SUBMACHINE_FUN,
@@ -329,7 +415,10 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.FOURTH,
         requiredPerks: [Perks.SHARPSHOOTER],
         levels: 1,
-        connections: [34]
+        connections: [34],
+        name: "SUBMACHINE FUN",
+        limitationDescription: "Only affects SMGs",
+        description: "Swapping Submachine Guns is faster and automatically reloads them, +22% fire rate after swapping to an SMG. Normal reloading ends the effect. "
     },
     {
         id: Perks.TAILWIND,
@@ -338,7 +427,9 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.FOURTH,
         requiredPerks: [Perks.AIR_DASH],
         levels: 1,
-        connections: [35]
+        connections: [35],
+        name: "TAILWIND",
+        description: "+25 stamina from performing Air Dashes and double jumps. "
     },
     {
         id: Perks.SLAUGHTERHOUSE,
@@ -347,7 +438,10 @@ export const reflexesPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.FOURTH,
         requiredPerks: [Perks.FINISHED_BLADERRUNNER],
         levels: 1,
-        connections: [36]
+        connections: [36],
+        name: "SLAUGHTERHOUSE",
+        limitationDescription: "Only affects blades",
+        description: "All attacks, counterattacks and deflected bullets apply Bleeding, which increases dismemberment chance. Bleeding cannot kill enemies, but does make them more susceptible to Finishers. +25 stamina from dismemberments. "
     },
 ];
 

@@ -15,6 +15,9 @@ export interface Perk {
     id: Perks;
     levels: number;
     connections: number[];
+    name?: string;
+    limitationDescription?: string;
+    description?: string;
 }
 
 export const getPerkState = (perk: Perk, currentPerks: CharacterPerkModel[], attributes: CharacterAttributesModel) => {

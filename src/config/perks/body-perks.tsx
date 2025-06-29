@@ -48,7 +48,9 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.FIRST,
         requiredPerks: [Perks.PAINKILLER],
         levels: 1,
-        connections: [1]
+        connections: [1],
+        name: "DORPH-HEAD",
+        description: "When using Blood Pump Cyberware or a Health Item: \\n+100% mitigation chance for 2 sec. \\n\\nMitigation - grants a chance to reduce incoming damage by current Mitigation Strength (default 50%) "
     },
     {
         id: Perks.COMEBACK_KID,
@@ -57,7 +59,9 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.FIRST,
         requiredPerks: [Perks.PAINKILLER],
         levels: 1,
-        connections: [3]
+        connections: [3],
+        name: "COMEBACK KID",
+        description: "+1% Health Regen Rate for each percent of missing Health."
     },
     {
         id: Perks.PAINKILLER,
@@ -66,7 +70,9 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.FIRST,
         requiredPerks: [],
         levels: 1,
-        connections: []
+        connections: [],
+        name: "PAINKILLER",
+        description: "Unlocks slow Health Regen in combat."
     },
     {
         id: Perks.SPEED_JUNKIE,
@@ -75,7 +81,9 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.FIRST,
         requiredPerks: [Perks.PAINKILLER],
         levels: 1,
-        connections: [4]
+        connections: [4],
+        name: "SPEED JUNKIE",
+        description: "+60% Health Regen Rate while sprinting."
     },
     {
         id: Perks.ARMY_OF_ONE,
@@ -84,7 +92,9 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.FIRST,
         requiredPerks: [Perks.PAINKILLER],
         levels: 1,
-        connections: [2]
+        connections: [2],
+        name: "ARMY OF ONE",
+        description: "+10% Health Regen Rate for each nearby enemy. "
     },
     {
         id: Perks.FURY_ROAD,
@@ -93,7 +103,9 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.FIRST,
         requiredPerks: [],
         levels: 1,
-        connections: []
+        connections: [],
+        name: "FURY ROAD",
+        description: "In vehicle collisions:\\n+50% damage to enemy vehicles and their occupants\\n-50% damage to your vehicles. \\n\\nYou take no damage as a vehicle occupant in collisions."
     },
     // SECOND ATTRIBUTES TIER
     {
@@ -103,7 +115,10 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.SECOND,
         requiredPerks: [Perks.DIE_DIE_DIE],
         levels: 1,
-        connections: [5]
+        connections: [5],
+        name: "BULLET BALLET",
+        description: "–25% bullet spread when moving.",
+        limitationDescription: "Only affects Shotguns, LMGs and HMGs"
     },
     {
         id: Perks.KINETIC_ABSORPTION,
@@ -112,7 +127,10 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.SECOND,
         requiredPerks: [Perks.WRECKING_BALL],
         levels: 1,
-        connections: [7]
+        connections: [7],
+        name: "KINETIC ABSORPTION",
+        limitationDescription: "Only affects Blunt Weapons",
+        description: "Blocking an attack gives +10% stamina and +30% damage with blunt weapons for 5 sec. "
     },
     {
         id: Perks.FLY_SWATTER,
@@ -121,7 +139,10 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.SECOND,
         requiredPerks: [Perks.WRECKING_BALL],
         levels: 1,
-        connections: [8]
+        connections: [8],
+        name: "FLY SWATTER",
+        limitationDescription: "Only affects Blunt Weapons",
+        description: "–40% incoming ranged damage when blocking with blunt weapons. "
     },
     {
         id: Perks.DIE_DIE_DIE,
@@ -130,7 +151,10 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.SECOND,
         requiredPerks: [],
         levels: 2,
-        connections: []
+        connections: [],
+        name: "DIE! DIE! DIE!",
+        limitationDescription: "Only affects Shotguns, LMGs and HMGs",
+        description: "Level 1: +12.5% Crit Chance at low Stamina.\\nLevel 2: Increased fire rate and improved weapon handling as Stamina decreases."
     },
     {
         id: Perks.WRECKING_BALL,
@@ -139,7 +163,10 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.SECOND,
         requiredPerks: [],
         levels: 2,
-        connections: []
+        connections: [],
+        name: "WRECKING BALL",
+        limitationDescription: "Only affects Blunt Weapons",
+        description: "Level 1: –15% stamina cost for attacks with blunt weapons. \\nLevel 2: Allows you to barrel into enemies while sprinting and blocking with blunt weapons, causing damage and a chance to knock them down. "
     },
     {
         id: Perks.LIKE_A_FEATHER,
@@ -148,7 +175,10 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.SECOND,
         requiredPerks: [Perks.DIE_DIE_DIE],
         levels: 1,
-        connections: [9]
+        connections: [9],
+        name: "LIKE A FEATHER",
+        limitationDescription: "Only affects Shotguns, LMGs and HMGs",
+        description: "No movement speed penalty with Shotguns, Light Machine Guns and Heavy Machine Guns."
     },
     {
         id: Perks.DONT_STOP_ME_NOW,
@@ -157,7 +187,10 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.SECOND,
         requiredPerks: [Perks.DIE_DIE_DIE],
         levels: 1,
-        connections: [10]
+        connections: [10],
+        name: "DON'T STOP ME KNOW",
+        limitationDescription: "Only affects Shotguns, LMGs and HMGs",
+        description: "When below 33% Stamina: \\n+15% Mitigation Chance, \\n+5% Mitigation Strength. "
     },
     {
         id: Perks.BREAKTHROUGH,
@@ -166,7 +199,10 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.SECOND,
         requiredPerks: [Perks.WRECKING_BALL],
         levels: 1,
-        connections: [11]
+        connections: [11],
+        name: "BREAKTHROUGH",
+        limitationDescription: "Only affects Blunt Weapons",
+        description: "–40% enemy armor for 7 sec. after hitting them with a strong attack."
     },
     {
         id: Perks.CLAPBACK,
@@ -175,7 +211,10 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.SECOND,
         requiredPerks: [Perks.WRECKING_BALL],
         levels: 1,
-        connections: [12]
+        connections: [12],
+        name: "CLAPBACK",
+        limitationDescription: "Only affects Blunt Weapons",
+        description: "+100% Knockdown chance with Defensive Attacks. \\nCooldown: 10 sec. \\n\\n+100% Stun chance with Counterattacks. "
     },
     {
         id: Perks.SKULLCRACKER,
@@ -184,7 +223,10 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.THIRD,
         requiredPerks: [Perks.SPONTANEOUS_OBLITERATION],
         levels: 1,
-        connections: [15]
+        connections: [15],
+        name: "SKULLCRACKER",
+        limitationDescription: "Only affects Shotguns, LMGs and HMGs",
+        description: "Increases damage of Quick Melee Attacks as Stamina decreases (max. +200% at 0 Stamina)"
     },
 
     {
@@ -194,7 +236,10 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.THIRD,
         requiredPerks: [Perks.SPONTANEOUS_OBLITERATION],
         levels: 1,
-        connections: [16]
+        connections: [16],
+        name: "RUSH OF BLOOD",
+        limitationDescription: "Only affects Shotguns, LMGs and HMGs",
+        description: "+20% reload speed for 8 sec. after dismembering an enemy. "
     },
     {
         id: Perks.JUGGERNAUT,
@@ -203,7 +248,9 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.THIRD,
         requiredPerks: [Perks.ADRENALINE_RUSH],
         levels: 1,
-        connections: [19]
+        connections: [19],
+        name: "JUGGERNAUT",
+        description: "When Adrenaline Rush is active: \\n+20% movement speed, \\n+10% damage. "
     },
     {
         id: Perks.CALM_MIND,
@@ -212,7 +259,9 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.THIRD,
         requiredPerks: [Perks.ADRENALINE_RUSH],
         levels: 1,
-        connections: [20]
+        connections: [20],
+        name: "CALM MIND",
+        description: "When Adrenaline Rush is active: +3 sec. delay before Adrenaline begins to decay. "
     },
     {
         id: Perks.AFTERSHOCK,
@@ -221,7 +270,10 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.THIRD,
         requiredPerks: [Perks.QUAKE],
         levels: 1,
-        connections: [23]
+        connections: [23],
+        name: "AFTERSHOCK",
+        limitationDescription: "Only affects Blunt Weapons",
+        description: "+30 stamina for each enemy hit with Quake. "
     },
     {
         id: Perks.EPICENTER,
@@ -230,7 +282,10 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.THIRD,
         requiredPerks: [Perks.QUAKE],
         levels: 1,
-        connections: [24]
+        connections: [24],
+        name: "EPICENTER",
+        limitationDescription: "Only affects Blunt Weapons",
+        description: "When Quake is performed from the midair (a Superhero landing), its area of effect and damage scale with your fall speed and fall distance. "
     },
     {
         id: Perks.SPONTANEOUS_OBLITERATION,
@@ -239,7 +294,10 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.THIRD,
         requiredPerks: [],
         levels: 3,
-        connections: [13]
+        connections: [13],
+        name: "SPONTANEOUS OBLITERATION",
+        limitationDescription: "Only affects Shotguns, LMGs and HMGs",
+        description: "Level 1: +12.5% Crit Chance at low Stamina. \\nLevel 2: +10% damage against nearby enemies. \\nLevel 3: unlocks Obliterate — the ability to sometimes instantly kill and dismember enemies at low Health. \\n\\nThe chance increases as enemy Health decreases (max. 20% Obliterate chance)."
     },
     {
         id: Perks.ADRENALINE_RUSH,
@@ -248,7 +306,9 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.THIRD,
         requiredPerks: [],
         levels: 3,
-        connections: [6]
+        connections: [6],
+        name: "ADRENALINE RUSH",
+        description: "Level 1: +35 Max Health. \\nLevel 2: +20% Health Regen bonus to all Health Regen effects from all sources. \\nLevel 3: Unlocks Adrenaline Rush mode. \\n\\nIn addition to their base effects, Blood Pump cyberware and health items now also give Adrenaline equal to 30% Max Health. (up to a max of 50% Max Health). \\n\\nAdrenaline is indicated by a yellow bar and acts like extra health by absorbing damage. It also decays over time.\\n\\nAdrenaline Rush remains active as long as you have Adrenaline available."
     },
     {
         id: Perks.QUAKE,
@@ -257,7 +317,11 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.THIRD,
         requiredPerks: [],
         levels: 3,
-        connections: [14]
+        connections: [14],
+        name: "QUAKE",
+        limitationDescription: "Only affects Blunt Weapons",
+        description: "Level 1: –15% Stamina cost for attacks with Blunt Weapons. \\nLevel 2: +20% attack speed with Blunt Weapons. \\nLevel 3: Press [Q] to violently slam the ground, damaging and staggering nearby enemies with a chance of knockdown. \\n\\nQuake can also be performed from midair (a superhero landing). \\n\\nCooldown: 10 sec. "
+
     },
     {
         id: Perks.CLOSE_QUARTERS_CARNAGE,
@@ -266,7 +330,10 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.THIRD,
         requiredPerks: [Perks.SPONTANEOUS_OBLITERATION],
         levels: 1,
-        connections: [25]
+        connections: [25],
+        name: "CLOSE-QUARTERS CARNAGE",
+        limitationDescription: "Only affects Shotguns, LMGs and HMGs",
+        description: "Increased chance to Obliterate enemies with ranged attacks at close range (max. 10%)."
     },
     {
         id: Perks.DREAD,
@@ -275,7 +342,10 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.THIRD,
         requiredPerks: [Perks.SPONTANEOUS_OBLITERATION],
         levels: 1,
-        connections: [26]
+        connections: [26],
+        name: "DREAD",
+        limitationDescription: "Only affects Shotguns, LMGs and HMGs",
+        description: "–15% enemy armor when using ranged attacks. \\n\\nDismemberment spreads the effect to nearby enemies. "
     },
     {
         id: Perks.BLOODLUST,
@@ -284,7 +354,10 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.THIRD,
         requiredPerks: [Perks.RUSH_OF_BLOOD, Perks.JUGGERNAUT],
         levels: 1,
-        connections: [17, 18]
+        connections: [17, 18],
+        name: "BLOODLUST",
+        limitationDescription: "Only affects Shotguns, LMGs and HMGs",
+        description: "When Adrenaline Rush is active: +50 Adrenaline on dismemberment of a nearby enemy. "
     },
     {
         id: Perks.UNSTOPPABLE_FORCE,
@@ -293,7 +366,9 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.THIRD,
         requiredPerks: [Perks.ADRENALINE_RUSH],
         levels: 1,
-        connections: [27]
+        connections: [27],
+        name: "UNSTOPPABLE FORCE",
+        description: "When Adrenaline Rush is active : gain immunity to movement penalties and non-damaging status effects such as Knockdown, Blinding, etc. "
     },
     {
         id: Perks.RIPPLE_EFFECT,
@@ -302,7 +377,9 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.THIRD,
         requiredPerks: [Perks.CALM_MIND, Perks.AFTERSHOCK],
         levels: 1,
-        connections: [21, 22]
+        connections: [21, 22],
+        name: "RIPPLE EFFECT",
+        limitationDescription: "limitationDescription: \"Only affects Blunt Weapons\","
     },
     {
         id: Perks.RIP_AND_TEAR,
@@ -311,7 +388,10 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.FOURTH,
         requiredPerks: [Perks.SPONTANEOUS_OBLITERATION],
         levels: 1,
-        connections: [28]
+        connections: [28],
+        name: "RIP AND TEAR",
+        limitationDescription: "Only affects Shotguns",
+        description: "+100% damage for the next Quick Melee Attack after shooting an enemy with a Shotgun.\\n\\n+100% damage for the next Shotgun shot after hitting an enemy with a Quick Melee Attack."
     },
     {
         id: Perks.ONSLAUGHT,
@@ -320,7 +400,10 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.FOURTH,
         requiredPerks: [Perks.SPONTANEOUS_OBLITERATION],
         levels: 1,
-        connections: [29]
+        connections: [29],
+        name: "ONSLAUGHT",
+        limitationDescription: "Only affects LMGs",
+        description: "+20% ammo refill after neutralizing an enemy with a Light Machine Gun."
     },
     {
         id: Perks.PAIN_TO_GAIN,
@@ -329,7 +412,9 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.FOURTH,
         requiredPerks: [Perks.ADRENALINE_RUSH],
         levels: 1,
-        connections: [30]
+        connections: [30],
+        name: "PAIN TO GAIN",
+        description: "When Adrenaline Rush is active: +20% Health Item recharge after neutralizing an enemy. "
     },
     {
         id: Perks.FINISHER_SAVAGE_SLINGER,
@@ -338,6 +423,9 @@ export const bodyPerksData: Perk[] = [
         requiredAttributes: BODY_TIERS.FOURTH,
         requiredPerks: [Perks.QUAKE],
         levels: 1,
-        connections: [31]
+        connections: [31],
+        name: "FINISHER: SAVAGE SLINGER",
+        limitationDescription: "Only affects Blunt Weapons",
+        description: "Unlocks a Blunt Weapon Finisher. \\n\\nPress [F] when an enemy's Health is low. Enemies affected by Stun are more susceptible.\\n\\nRestores 20% Health.\\n\\nHold [F] to throw the enemy instead, killing them and damaging other enemies where they land."
     },
 ];
