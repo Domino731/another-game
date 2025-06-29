@@ -1,8 +1,9 @@
 export const ROUTES = {
-    characterPerksBody: '/character/perks/body/',
-    characterPerksCool: '/character/perks/cool/',
-    characterPerksIntelligence: '/character/perks/intelligence/',
-    characterPerksReflexes: '/character/perks/reflexes/',
-    characterPerksRelic: '/character/perks/relic/',
-    characterPerksTechnicalAbility: '/character/perks/technical-ability/',
+    characterPerksBody: `/character/perks/?attribute=BODY`,
+    characterPerksCool: `/character/perks/?attribute=COOL`,
+    characterPerksIntelligence: `/character/perks/?attribute=INTELLIGENCE`,
+    characterPerksReflexes: `/character/perks/?attribute=REFLEX`,
+    characterPerksTechnicalAbility: `/character/perks/?attribute=TECHNICAL_ABILITY`,
+    characterPerks: '/character/perks/',
+    characterAttributes: '/character/attributes/'
 }

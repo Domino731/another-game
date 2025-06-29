@@ -11,8 +11,9 @@ const HtmlTooltip = styled(({className, ...props}: TooltipProps) => (
         backgroundColor: GAME_COLORS.black,
         color: 'rgba(0, 0, 0, 0.87)',
         fontSize: theme.typography.pxToRem(1),
-        border: `0.1em solid ${GAME_COLORS.yellow}`,
+        border: `solid ${GAME_COLORS.yellow}`,
         borderRadius: 0,
+        borderWidth: '0.5em',
         padding: '14px'
     },
 }));
