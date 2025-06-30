@@ -1,7 +1,7 @@
-import { Application, extend, useApplication } from "@pixi/react";
+import { Application, extend } from "@pixi/react";
 import { Assets, Container, Sprite, Texture } from "pixi.js";
-import { useEffect, useRef, useState } from "react";
-import { mapTexturePaths } from "../../utils";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { mapPositions, mapTexturePaths, TILE_SIZE } from "../../utils";
 
 // extend tells @pixi/react what Pixi.js components are available
 extend({
@@ -9,41 +9,101 @@ extend({
   Sprite,
 });
 
-const BunnySprite = () => {
-  const { app } = useApplication();
-
-  // The Pixi.js `Sprite`
+const TileSprite = ({ tile }: { tile: TilesData }) => {
   const spriteRef = useRef<Sprite>(null);
   const [texture, setTexture] = useState(Texture.EMPTY);
 
-  // Preload the sprite if it hasn't been loaded yet
   useEffect(() => {
     if (texture === Texture.EMPTY) {
-      const textures = mapTexturePaths;
-      console.log(textures[0]);
-      Assets.load(textures[0]).then((result) => {
+      Assets.load(tile.assetPath).then((result) => {
         setTexture(result);
       });
     }
-  }, [texture]);
+  }, [texture, tile.assetPath]);
 
   return (
     <pixiSprite
       ref={spriteRef}
       texture={texture}
-      anchor={0.5}
-      x={app.screen.width / 2}
-      y={app.screen.height / 2}
+      x={tile.cords[0]}
+      y={tile.cords[1]}
+      width={TILE_SIZE}
+      height={TILE_SIZE}
     />
+  );
+};
+
+interface TilesData {
+  cords: number[];
+  assetPath: string;
+}
+
+const TilesComponent = () => {
+  const containerRef = useRef<Container>(null);
+  const [dragging, setDragging] = useState(false);
+  const [dragData, setDragData] = useState<{
+    offsetX: number;
+    offsetY: number;
+  } | null>(null);
+
+  const tilesData = useMemo(() => {
+    const data: TilesData[] = [];
+    for (let i = 0; i < mapPositions.length; i++) {
+      const [x, y] = mapPositions[i];
+      if (mapTexturePaths[i]) {
+        data.push({ cords: [x, y], assetPath: mapTexturePaths[i] });
+      }
+    }
+    return data;
+  }, []);
+
+  const onPointerDown = (event: any) => {
+    setDragging(true);
+    const pos = event.data.getLocalPosition(containerRef.current?.parent);
+    const container = containerRef.current;
+    if (container) {
+      setDragData({
+        offsetX: pos.x - container.x,
+        offsetY: pos.y - container.y,
+      });
+    }
+  };
+
+  const onPointerUp = () => {
+    setDragging(false);
+    setDragData(null);
+  };
+
+  const onPointerMove = (event: any) => {
+    if (dragging && dragData && containerRef.current) {
+      const newPosition = event.data.getLocalPosition(
+        containerRef.current.parent,
+      );
+      containerRef.current.x = newPosition.x - dragData.offsetX;
+      containerRef.current.y = newPosition.y - dragData.offsetY;
+    }
+  };
+
+  return (
+    <pixiContainer
+      ref={containerRef}
+      interactive={true}
+      onPointerDown={onPointerDown}
+      onPointerUp={onPointerUp}
+      onPointerUpOutside={onPointerUp}
+      onPointerMove={onPointerMove}
+    >
+      {tilesData.map((tile, index) => (
+        <TileSprite tile={tile} key={index} />
+      ))}
+    </pixiContainer>
   );
 };
 
 export const MapPage = () => {
   return (
-    // We'll wrap our components with an <Application> component to provide
-    // the Pixi.js Application context
     <Application background={"#1099bb"} resizeTo={window}>
-      <BunnySprite />
+      <TilesComponent />
     </Application>
   );
 };
