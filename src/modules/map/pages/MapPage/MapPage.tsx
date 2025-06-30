@@ -1,42 +1,14 @@
 import { Application, extend } from "@pixi/react";
-import { Assets, Container, Sprite, Texture } from "pixi.js";
+import { Container, Sprite } from "pixi.js";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { mapPositions, mapTexturePaths, TILE_SIZE } from "../../utils";
+import { mapPositions, mapTexturePaths } from "../../utils";
+import { TilesData } from "./types";
+import { TileSprite } from "./TileSprite";
 
-// extend tells @pixi/react what Pixi.js components are available
 extend({
   Container,
   Sprite,
 });
-
-const TileSprite = ({ tile }: { tile: TilesData }) => {
-  const spriteRef = useRef<Sprite>(null);
-  const [texture, setTexture] = useState(Texture.EMPTY);
-
-  useEffect(() => {
-    if (texture === Texture.EMPTY) {
-      Assets.load(tile.assetPath).then((result) => {
-        setTexture(result);
-      });
-    }
-  }, [texture, tile.assetPath]);
-
-  return (
-    <pixiSprite
-      ref={spriteRef}
-      texture={texture}
-      x={tile.cords[0]}
-      y={tile.cords[1]}
-      width={TILE_SIZE}
-      height={TILE_SIZE}
-    />
-  );
-};
-
-interface TilesData {
-  cords: number[];
-  assetPath: string;
-}
 
 const TilesComponent = () => {
   const containerRef = useRef<Container>(null);
@@ -84,6 +56,31 @@ const TilesComponent = () => {
     }
   };
 
+  useEffect(() => {
+    const handleWheel = (event: WheelEvent) => {
+      event.preventDefault();
+      const container = containerRef.current;
+      if (container) {
+        // Adjust zoom factor (scroll up => zoom in, down => zoom out)
+        const scaleAmount = 1 + (event.deltaY > 0 ? -0.1 : 0.1);
+
+        // Limit zoom level
+        const newScaleX = container.scale.x * scaleAmount;
+        const newScaleY = container.scale.y * scaleAmount;
+
+        if (newScaleX > 0.5 && newScaleX < 4) {
+          container.scale.set(newScaleX, newScaleY);
+        }
+      }
+    };
+
+    window.addEventListener("wheel", handleWheel, { passive: false });
+
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+    };
+  }, []);
+
   return (
     <pixiContainer
       ref={containerRef}
@@ -99,7 +96,6 @@ const TilesComponent = () => {
     </pixiContainer>
   );
 };
-
 export const MapPage = () => {
   return (
     <Application background={"#1099bb"} resizeTo={window}>
