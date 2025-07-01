@@ -1,13 +1,16 @@
 import { Application, extend } from "@pixi/react";
-import { Container, Sprite } from "pixi.js";
+import { Container, Sprite, Polygon, Graphics } from "pixi.js";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { mapPositions, mapTexturePaths } from "../../utils";
 import { TilesData } from "./types";
 import { TileSprite } from "./TileSprite";
+import { CityDistricts } from "../../components/CityDistrict/CityDistrict";
 
 extend({
   Container,
   Sprite,
+  Polygon,
+  Graphics,
 });
 
 const TilesComponent = () => {
@@ -93,6 +96,7 @@ const TilesComponent = () => {
       {tilesData.map((tile, index) => (
         <TileSprite tile={tile} key={index} />
       ))}
+      <CityDistricts />
     </pixiContainer>
   );
 };

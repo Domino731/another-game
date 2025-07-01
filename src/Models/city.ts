@@ -1,0 +1,40 @@
+export enum DISTRICT_NAME {
+  WATSON = "WATSON",
+  CENTRE = "CENTRE",
+  HEYWOOD = "HEYWOOD",
+  SANTO_DOMINGO = "SANTO_DOMINGO",
+  WESTBROOK = "WESTBROOK",
+  PACIFICA = "PACIFICA",
+}
+
+export enum SUBDISTRICT_NAME {
+  ARASAKA_SHORELINE = "ARASAKA_SHORELINE",
+  LITTLE_CHINA = "LITTLE_CHINA",
+  KABUKI = "KABUKI",
+  NORTHSIDE = "NORTHSIDE",
+  DOWNTOWN = "DOWNTOWN",
+  CORPORATE_PLAZA = "CORPORATE_PLAZA",
+  VISTA_DEL_REY = "VISTA_DEL_REY",
+  WELL_SPRINGS = "WELL_SPRINGS",
+  GLEN = "GLEN",
+  ARROYO = "ARROYO",
+  RANCHO_CORONADO = "RANCHO_CORONADO",
+  JAPANATOWN = "JAPANTOWN",
+  NORTHOAK = "NORTHOAK",
+  CHARTERHILL = "CHARTERHILL",
+  COAST_VIEW = "COAST_VIEW",
+  DOGTOWN = "DOGTOWN",
+}
+
+export interface DistrictModel {
+  cords: number[];
+  name: string;
+  id: DISTRICT_NAME;
+  subdistricts: SubdistrictModel[];
+}
+
+export interface SubdistrictModel {
+  name: string;
+  cords: number[];
+  id: SUBDISTRICT_NAME;
+}
