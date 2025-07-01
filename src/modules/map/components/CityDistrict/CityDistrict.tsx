@@ -1,41 +1,23 @@
-import {
-  ArasakaShorelineLineCords,
-  Arroro,
-  CentreCords,
-  CharterHill,
-  CoastView,
-  CorporatePlaza,
-  Dogtown,
-  DowntownCords,
-  Glen,
-  HeywoodDistrictCords,
-  Japantown,
-  KabukiLineCords,
-  LittleChinaLineCords,
-  Northoak,
-  NorthsideCords,
-  Pacifica,
-  RanchoCoronado,
-  SantoDomingo,
-  VistalDelRay,
-  WatsonDistrictLineCords,
-  Wellsprings,
-  Westbrook,
-} from "../../../../config/map/districts-cords";
 import { useCallback } from "react";
 import { Graphics } from "pixi.js";
 import { GAME_COLORS } from "../../../app/styles/colors";
+import { DistrictModel } from "../../../../Models/city";
+import { DISTRICTS } from "../../../../config/map/districts";
 
 interface CityDistrictProps {
   cords: number[];
+  isSubDistrict: boolean;
 }
 
-export const CityDistrict = ({ cords }: CityDistrictProps) => {
+export const CityDistrictGraphics = ({
+  cords,
+  isSubDistrict,
+}: CityDistrictProps) => {
   const drawPolygon = useCallback(
     (graphics: Graphics) => {
       graphics.clear();
-      graphics.beginFill(0xff0000, 0); // red fill
-      graphics.lineStyle(3, GAME_COLORS.yellow); // black border
+      graphics.beginFill(0xff0000, 0);
+      graphics.lineStyle(isSubDistrict ? 1 : 3, GAME_COLORS.yellow);
       graphics.drawPolygon(cords);
       graphics.endFill();
     },
@@ -45,42 +27,23 @@ export const CityDistrict = ({ cords }: CityDistrictProps) => {
   return <pixiGraphics draw={drawPolygon} />;
 };
 
+const CityDistrict = ({ district }: { district: DistrictModel }) => {
+  return (
+    <pixiContainer>
+      <CityDistrictGraphics cords={district.cords} isSubDistrict={false} />
+      {district.subdistricts.map((el) => (
+        <CityDistrictGraphics cords={el.cords} key={el.id} isSubDistrict />
+      ))}
+    </pixiContainer>
+  );
+};
+
 export const CityDistricts = () => {
   return (
     <>
-      {/*WATSON*/}
-      <CityDistrict cords={WatsonDistrictLineCords} />
-      <CityDistrict cords={ArasakaShorelineLineCords} />
-      <CityDistrict cords={LittleChinaLineCords} />
-      <CityDistrict cords={KabukiLineCords} />
-      <CityDistrict cords={NorthsideCords} />
-
-      {/*CENTRE*/}
-      <CityDistrict cords={CentreCords} />
-      <CityDistrict cords={DowntownCords} />
-      <CityDistrict cords={CorporatePlaza} />
-
-      {/*HEYWOOD*/}
-      <CityDistrict cords={HeywoodDistrictCords} />
-      <CityDistrict cords={VistalDelRay} />
-      <CityDistrict cords={Wellsprings} />
-      <CityDistrict cords={Glen} />
-
-      {/*SANTO DOMINGO*/}
-      <CityDistrict cords={SantoDomingo} />
-      <CityDistrict cords={Arroro} />
-      <CityDistrict cords={RanchoCoronado} />
-
-      {/*WESTBROOK*/}
-      <CityDistrict cords={Westbrook} />
-      <CityDistrict cords={Japantown} />
-      <CityDistrict cords={Northoak} />
-      <CityDistrict cords={CharterHill} />
-
-      {/*PACIFICA*/}
-      <CityDistrict cords={Pacifica} />
-      <CityDistrict cords={CoastView} />
-      <CityDistrict cords={Dogtown} />
+      {DISTRICTS.map((district) => (
+        <CityDistrict district={district} key={district.id} />
+      ))}
     </>
   );
 };
